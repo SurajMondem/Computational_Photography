@@ -4,6 +4,9 @@ import matplotlib.pyplot as plt
 
 
 def convolution(image, kernel, average=False, debug=True):
+
+    # Checks if the image is RGB
+    # if Yes then converts it into grayscale
     if len(image.shape) == 3:
         print("Found 3 channels : {}".format(image.shape))
         image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
@@ -20,14 +23,20 @@ def convolution(image, kernel, average=False, debug=True):
     image_row, image_col = image.shape
     kernel_row, kernel_col = kernel.shape
 
+    # Sample matrix of size of image
     output_image = np.zeros(image.shape)
 
+    # calculate the required padding according to kernel size
     pad_height = int((kernel_row - 1) / 2)
     pad_width = int((kernel_col - 1) / 2)
 
+    # create sample image with padding
     padded_image = np.zeros(
         (image_row + (2 * pad_height), image_col + (2 * pad_width)))
 
+    print(padded_image.dtype)
+
+    # insert the image into the padded image
     padded_image[pad_height: padded_image.shape[0] - pad_height,
                  pad_width: padded_image.shape[1] - pad_width] = image
 
@@ -35,6 +44,8 @@ def convolution(image, kernel, average=False, debug=True):
         cv2.imshow("Padded Image", image)
         cv2.waitKey(0)
 
+    print(kernel.dtype)
+    # Convolute the padded image with the given kernel
     for row in range(image_row):
         for col in range(image_col):
             output_image[row, col] = np.sum(
@@ -42,9 +53,13 @@ def convolution(image, kernel, average=False, debug=True):
             if average:
                 output_image[row, col] //= kernel.shape[0] * kernel.shape[1]
 
+    print(output_image.dtype)
+    # convert the Float64 data into Uint8 Data
     output = cv2.normalize(output_image, None, 255, 0,
                            cv2.NORM_MINMAX, cv2.CV_8UC1)
-    cv2.imshow("Final test output", output)
+
+    # Display the Final output
+    cv2.imshow("Final test output", output_image)
     cv2.waitKey(0)
 
     return output_image
