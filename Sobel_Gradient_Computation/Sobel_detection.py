@@ -4,7 +4,7 @@ from Convolution import convolution
 from Gaussian_Blur import gaussian_blur
 
 
-def Sobel_edge_detection(image, kernel, debug=False):
+def Sobel_Gradient_Computation(image, kernel, debug=False):
 
     # Convolution of Image with Sobel Kernel in X-Axis
     image_xAxis = convolution(image, kernel, debug=debug)
@@ -54,12 +54,12 @@ if __name__ == '__main__':
     # Sobel Kernel
     kernel = np.array([[-1, 0, 1], [-2, 0, 2], [-1, 0, 1]])
 
-    image = gaussian_blur(image, 13, debug)
+    image = gaussian_blur(image, 3, debug)
     if not debug:
         cv2.imshow('Gaussian blur output', image)
         cv2.waitKey(0)
 
-    image = Sobel_edge_detection(image, kernel, False)
+    image = Sobel_Gradient_Computation(image, kernel, False)
     if not debug:
         cv2.imshow('Sobel Edge detection', image)
         cv2.waitKey(0)
