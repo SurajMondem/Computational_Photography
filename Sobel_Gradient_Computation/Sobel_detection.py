@@ -25,9 +25,18 @@ def Sobel_Gradient_Computation(image, kernel, debug=False):
     # final Gradient = Sqrt( xAxis * xAxis + yAxis * yAxis)
     final_gradient = np.sqrt(np.square(image_xAxis) + np.square(image_yAxis))
 
+    gradient_direction = np.arctan(image_yAxis / image_xAxis)
+
     # convert the Float64 data into Uint8 Data
     output = cv2.normalize(final_gradient, None, 255, 0,
                            cv2.NORM_MINMAX, cv2.CV_8UC1)
+
+    direction = cv2.normalize(gradient_direction, None, 255, 0,
+                              cv2.NORM_MINMAX, cv2.CV_8UC1)
+
+    if debug:
+        cv2.imshow('Gradient Direction output', direction)
+        cv2.waitKey(0)
 
     if debug:
         cv2.imshow('Final Combined output', final_gradient)
