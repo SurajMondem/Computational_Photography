@@ -9,6 +9,7 @@
 </div>
 
 <br />
+
 ## Table of Contents
 
 - [x] [Kernel Convolutions](#features)
@@ -26,7 +27,7 @@
 
   The general expression of a convolution is
 
-  ![Convolution](Assets\Convolution.svg)
+  ![Convolution](Assets/Convolution.svg)
 
   Depending on the element values, a kernel can cause a wide range of effects.
   <br/>
@@ -41,7 +42,7 @@
 
   The Gaussian blur is a type of image-blurring filters that uses a Gaussian function (which also expresses the normal distribution in statistics) for calculating the transformation to apply to each pixel in the image. The formula of a Gaussian function in one dimension is
 
-  ![Convolution](Assets\Gaussian_blur.svg)
+  ![Convolution](Assets/Gaussian_blur.svg)
   <br/>
 
   **[Code](.\Kernel_Convolutions\Readme.md)**
@@ -51,6 +52,7 @@
   Blend modes in digital image editing and computer graphics are used to determine how two layers are blended with each other. The default blend mode in most applications is simply to obscure the lower layer by covering it with whatever is present in the top layer. However, as each pixel has a numerical representation, there exist a large number of ways to blend two layers.
 
   - **List of Blend Modes**
+
     1.  Addition
     2.  Darken
     3.  Difference
