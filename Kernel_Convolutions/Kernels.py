@@ -59,26 +59,42 @@ if __name__ == '__main__':
     image_path = r'C:\Users\suraj\Desktop\CV\Computation_Photography\Input_images\P1.jpg'
     image = cv2.imread(image_path)
 
-    # Resize the image
-    dsize = (image.shape[1]//5, image.shape[0]//5)
-    input = cv2.resize(image, dsize)
-
-    # parametes
+    # parameters
     # Color - True for color convolution
     # debug - Picture Display after every step
     color = True
     debug = False
+    save = True
+    resize = True
+
+    if resize:
+        # Resize the image
+        dsize = (image.shape[1]//8, image.shape[0]//8)
+        input = cv2.resize(image, dsize)
 
     if not debug:
         cv2.imshow('input', input)
         cv2.waitKey(0)
 
-    Identity_kernel(input, debug, color)
+    if save:
+        cv2.imwrite('Kernel_Convolutions/Outputs/Input.jpg', input)
 
-    Highpass_kernel(input, debug, color)
+    output1 = Identity_kernel(input, debug, color)
+    if save:
+        cv2.imwrite('Kernel_Convolutions/Outputs/Identity.jpg', output1)
 
-    Sharpen_kernel(input, debug, color)
+    output2 = Highpass_kernel(input, debug, color)
+    if save:
+        cv2.imwrite('Kernel_Convolutions/Outputs/HighPass.jpg', output2)
 
-    Emboss_kernel(input, debug, color)
+    output3 = Sharpen_kernel(input, debug, color)
+    if save:
+        cv2.imwrite('Kernel_Convolutions/Outputs/Sharpen.jpg', output3)
 
-    Box_blur(input, debug, color)
+    output4 = Emboss_kernel(input, debug, color)
+    if save:
+        cv2.imwrite('Kernel_Convolutions/Outputs/Emboss.jpg', output4)
+
+    output5 = Box_blur(input, debug, color)
+    if save:
+        cv2.imwrite('Kernel_Convolutions/Outputs/BoxBlur.jpg', output5)
