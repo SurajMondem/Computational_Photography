@@ -72,7 +72,7 @@
 
         <br/>
 
-      ![Convolution Process](Assets/Convolution_process.svg)
+      ![Convolution Process](Assets/Convolution_Process.svg)
       <br/>
 
   3.  Apply Normalization on the Image.
