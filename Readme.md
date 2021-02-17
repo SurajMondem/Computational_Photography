@@ -32,7 +32,7 @@
   Depending on the element values, a kernel can cause a wide range of effects.
   <br/>
 
-  **[Code](./Kernel_Convolutions/Readme.md)**
+  **[Code](Kernel_Convolutions/Readme.md)**
 
 <br />
 
