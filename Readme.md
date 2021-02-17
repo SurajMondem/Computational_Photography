@@ -5,14 +5,14 @@
 </div>
 
 <div align="center">
-  <strong>Computational Photography Concepts implemented from scratch</strong>
+  <strong>Computational Photography concepts implemented from scratch</strong>
 </div>
 
 <br />
 
 ## Table of Contents
 
-- [x] [Kernel Convolutions](#features)
+- [x] [Kernel Convolutions](#Kernel_Convolution)
 - [x] [Gaussian Blur](#example)
 - [x] [Blending Modes](#philosophy)
 - [x] [Sobel Gradient Computation](#events)
@@ -64,5 +64,51 @@
     9.  Subtraction
 
     <br/>
+
+  **[Code](.\Kernel_Convolutions\Readme.md)**
+
+- ### Sobel Gradient Computation
+
+  The Sobel operator, sometimes called the Sobel–Feldman operator or Sobel filter, is used in image processing and computer vision, particularly within edge detection algorithms where it creates an image emphasising edges. At each point in the image, the result of the Sobel–Feldman operator is either the corresponding gradient vector or the norm of this vector. The Sobel–Feldman operator is based on convolving the image with a small, separable, and integer-valued filter in the horizontal and vertical directions and is therefore relatively inexpensive in terms of computations.
+
+  <br/>
+
+  ![Sobel_Operator](Assets\Sobel_Operator.svg)
+
+  <br/>
+
+  **[Code](.\Kernel_Convolutions\Readme.md)**
+
+- ### Canny Edge Detector
+
+  The Canny edge detector is an edge detection operator that uses a multi-stage algorithm to detect a wide range of edges in images. It was developed by John F. Canny in 1986.
+  Canny edge detection is a technique to extract useful structural information from different vision objects and dramatically reduce the amount of data to be processed.
+  <br/>
+
+  **Process of Canny Edge Detection algorithm:**
+
+  1. Apply Gaussian filter to smooth the image in order to remove the noise
+  2. Find the intensity gradients of the image
+  3. Apply gradient magnitude thresholding or lower bound cut-off suppression to get rid of spurious response to edge detection
+  4. Apply double threshold to determine potential edges
+  5. Track edge by hysteresis: Finalize the detection of edges by suppressing all the other edges that are weak and not connected to strong edges.
+
+  <br/>
+
+  **[Code](.\Kernel_Convolutions\Readme.md)**
+
+- ### Gaussian Pyramid
+
+  In a Gaussian pyramid, subsequent images are weighted down using a Gaussian average (Gaussian blur) and scaled down. Each pixel containing a local average corresponds to a neighborhood pixel on a lower level of the pyramid. This technique is used especially in texture synthesis.
+
+  <br/>
+
+  **[Code](.\Kernel_Convolutions\Readme.md)**
+
+- ### Laplacian Pyramid
+
+  A Laplacian pyramid is very similar to a Gaussian pyramid but saves the difference image of the blurred versions between each levels. Only the smallest level is not a difference image to enable reconstruction of the high resolution image using the difference images on higher levels. This technique can be used in image compression.
+
+  <br/>
 
   **[Code](.\Kernel_Convolutions\Readme.md)**
