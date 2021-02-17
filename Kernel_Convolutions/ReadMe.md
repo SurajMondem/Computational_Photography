@@ -22,10 +22,16 @@
 - ### Theory
 
   In image processing, a kernel, convolution matrix, or mask is a small matrix. It is used for blurring, sharpening, embossing, edge detection, and more. This is accomplished by doing a convolution between a kernel and an image.
+
   A **kernel** is a matrix, which is slid across the image and multiplied with the input such that the output is enhanced in a certain desirable manner.
+
   <br/>
+
   **Convolution** is the process of adding each element of the image to its local neighbors, weighted by the kernel.
   The general expression of a convolution is
+
+  <br />
+
   ![Convolution](Assets/Convolution.svg)
   Depending on the element values, a kernel can cause a wide range of effects.
 
@@ -66,7 +72,7 @@
 
         <br/>
 
-      ![Convolution Process](Assets\Convolution_process.svg)
+      ![Convolution Process](Assets/Convolution_process.svg)
       <br/>
 
   3.  Apply Normalization on the Image.
@@ -79,7 +85,7 @@
 
   `Python --version`
 
-  ![cmd Output](Assets\Cmd.jpg)
+  ![cmd Output](Assets/Cmd.JPG)
 
   Once you have python Installed in your device follow the next steps to run the program:
 
@@ -93,13 +99,13 @@
 
   The Following Parameters which can be changed to adjust the form of output
 
-  > Debug -> If True, The code will display image output after processing every step
+  > **Debug -> If True, The code will display image output after processing every step**
 
-  > Color -> If True, The code will go through "Colored Convolution" and all outputs would be displayed in "RGB Version" of Image. If False, The Code will convert the image into "GrayScale" and the output displayed will be in "Grayscale".
+  > **Color -> If True, The code will go through "Colored Convolution" and all outputs would be displayed in "RGB Version" of Image. If False, The Code will convert the image into "GrayScale" and the output displayed will be in "Grayscale".**
 
-  > Save -> If True, the Output of the Image will be Saved in the Output Directory.
+  > **Save -> If True, the Output of the Image will be Saved in the Output Directory.**
 
-  > Resize -> If True, The Input Image will be Resized to a given ratio, you can change the ratio according to your needs.
+  > **Resize -> If True, The Input Image will be Resized to a given ratio, you can change the ratio according to your needs.**
 
 - ### Output
 
@@ -113,7 +119,7 @@
 
   - #### **Highpass Image**
 
-      <img src="Outputs\Highpass.jpg" style="height: 300px; border: 1px black solid; box-shadow: 3px 3px 10px 0px rgba(0,0,0,0.5)" />
+      <img src="Outputs\HighPass.jpg" style="height: 300px; border: 1px black solid; box-shadow: 3px 3px 10px 0px rgba(0,0,0,0.5)" />
 
   - #### **Sharpen Image**
 
