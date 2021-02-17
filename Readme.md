@@ -32,7 +32,7 @@
   Depending on the element values, a kernel can cause a wide range of effects.
   <br/>
 
-  **[Code](.\Kernel_Convolutions\Readme.md)**
+  **[Code](./Kernel_Convolutions/Readme.md)**
 
 <br />
 
@@ -73,7 +73,7 @@
 
   <br/>
 
-  ![Sobel_Operator](Assets\Sobel_Operator.svg)
+  ![Sobel_Operator](Assets/Sobel_Operator.svg)
 
   <br/>
 
