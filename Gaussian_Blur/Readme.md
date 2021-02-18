@@ -104,7 +104,7 @@
   Once you have python Installed in your device follow the next steps to run the program:
 
   1. `git clone <Repository Link>`
-  2. cd into the "Kernal_Convolutions" folder
+  2. cd into the "Gaussian_Blur" folder
   3. Run the following command
 
      `py Gaussian_blur.py`
