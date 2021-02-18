@@ -50,12 +50,36 @@ if __name__ == '__main__':
     path = r'C:\Users\suraj\Desktop\CV\Computation_Photography\Gaussian_Blur\P1.jpg'
     image = cv2.imread(path)
 
-    print(image.shape)
-    dsize = (image.shape[1]//5, image.shape[0]//5)
-    input = cv2.resize(image, dsize)
-
-    print(input.shape)
-    kernel_size = 3
     debug = False
+    save = True
+    resize = True
+    kernel_size = 3
 
-    gaussian_blur(input, kernel_size, debug)
+    if resize:
+        dsize = (image.shape[1]//7, image.shape[0]//7)
+        input = cv2.resize(image, dsize)
+
+    if not debug:
+        cv2.imshow('input', input)
+        cv2.waitKey(0)
+
+    if save:
+        cv2.imwrite('Gaussian_Blur/Outputs/Input.jpg', input)
+
+    output1 = gaussian_blur(input, kernel_size, debug)
+
+    if not debug:
+        cv2.imshow('input', output1)
+        cv2.waitKey(0)
+
+    if save:
+        cv2.imwrite('Gaussian_Blur/Outputs/Gaussian_blur1.jpg', output1)
+
+    output2 = gaussian_blur(input, 9, debug)
+
+    if not debug:
+        cv2.imshow('input', output2)
+        cv2.waitKey(0)
+
+    if save:
+        cv2.imwrite('Gaussian_Blur/Outputs/Gaussian_blur2.jpg', output2)

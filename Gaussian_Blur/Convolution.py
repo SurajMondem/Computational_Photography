@@ -53,13 +53,13 @@ def convolution(image, kernel, average=False, debug=True):
             if average:
                 output_image[row, col] //= kernel.shape[0] * kernel.shape[1]
 
-    print(output_image.dtype)
     # convert the Float64 data into Uint8 Data
     output = cv2.normalize(output_image, None, 255, 0,
                            cv2.NORM_MINMAX, cv2.CV_8UC1)
 
     # Display the Final output
-    cv2.imshow("Final test output", output_image)
-    cv2.waitKey(0)
+    if debug:
+        cv2.imshow("Final test output", output)
+        cv2.waitKey(0)
 
-    return output_image
+    return output
