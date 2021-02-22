@@ -13,7 +13,6 @@ def Addition(image1, image2, debug=False):
 
     output_image = np.zeros(image1.shape)
 
-    # output_image = np.divide(image2, image2)
     for col in range(len(image1)):
         for row in range(len(image1[col])):
             for color in range(len(image1[col][row])):
@@ -23,10 +22,9 @@ def Addition(image1, image2, debug=False):
                     output_image[col][row][color] = image1[col][row][color] + \
                         image2[col][row][color]
 
-    print(output_image)
-
     # Display the Final output
-    # cv2.imshow("Final test output", output_image)
-    # cv2.waitKey(0)
+    if debug:
+        cv2.imshow("Final test output", output_image)
+        cv2.waitKey(0)
 
     return output_image

@@ -27,7 +27,8 @@ def Difference(image1, image2, debug=False):
     print(output_image)
 
     # Display the Final output
-    # cv2.imshow("Final test output", output_image)
-    # cv2.waitKey(0)
+    if debug:
+        cv2.imshow("Final test output", output_image)
+        cv2.waitKey(0)
 
     return output_image
