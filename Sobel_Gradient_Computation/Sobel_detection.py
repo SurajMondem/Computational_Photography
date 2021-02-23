@@ -46,29 +46,44 @@ def Sobel_Gradient_Computation(image, kernel, debug=False):
 
 
 if __name__ == '__main__':
-    # Set Debug - True for Picture output after Every Step
-    debug = False
-
     image_path = r'C:\Users\suraj\Desktop\CV\Computation_Photography\Input_images\P1.jpg'
     image = cv2.imread(image_path)
     print(image.shape)
 
-    # Resize Large Picture to Small for Faster Processing
-    image = cv2.resize(image, (image.shape[1]//5, image.shape[0]//5))
-
-    if not debug:
-        cv2.imshow('input', image)
-        cv2.waitKey(0)
-
-    # Sobel Kernel
+    # Parameters
+    debug = False
+    save = True
+    resize = True
+    kernel_size = 3
     kernel = np.array([[-1, 0, 1], [-2, 0, 2], [-1, 0, 1]])
 
-    image = gaussian_blur(image, 3, debug)
+    if resize:
+        dsize = (image.shape[1]//7, image.shape[0]//7)
+        input = cv2.resize(image, dsize)
+
     if not debug:
-        cv2.imshow('Gaussian blur output', image)
+        cv2.imshow('input', input)
         cv2.waitKey(0)
 
-    image = Sobel_Gradient_Computation(image, kernel, False)
+    if save:
+        cv2.imwrite(
+            'Sobel_Gradient_Computation/Image_Outputs/Input.jpg', input)
+
+    gb1 = gaussian_blur(input, kernel_size, debug)
+
+    gb2 = gaussian_blur(input, 9, debug)
+
+    output1 = Sobel_Gradient_Computation(gb1, kernel, False)
+
+    output2 = Sobel_Gradient_Computation(gb2, kernel, False)
+
     if not debug:
-        cv2.imshow('Sobel Edge detection', image)
+        cv2.imshow('Sobel Edge detection1', output1)
+        cv2.imshow('Sobel Edge detection2', output2)
         cv2.waitKey(0)
+
+    if save:
+        cv2.imwrite(
+            'Sobel_Gradient_Computation/Image_Outputs/Sobel_Detection1.jpg', output1)
+        cv2.imwrite(
+            'Sobel_Gradient_Computation/Image_Outputs/Sobel_Detection2.jpg', output2)
